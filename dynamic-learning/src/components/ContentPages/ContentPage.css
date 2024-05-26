@@ -1,0 +1,42 @@
+.content-container{
+    float: left;
+    width: 100%;
+    height: auto;
+    min-height: 80%;
+    margin-top:15px;
+}
+
+.content-table{
+    position: absolute;
+}
+
+.content-main {
+    float:left;
+    height:100%;
+}
+
+.content-right-section{
+    float: right;
+    height:100%;
+}
+
+.right-btn{
+    cursor: pointer;
+    float: left;
+    font-size: 15px;
+    background-color: #282A35;
+    background: linear-gradient(to left, #282A35 70%, transparent 100%);
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+@media (min-width: 992px) {
+    .content-table{
+        float:left;
+        height: 100%;
+        padding-right: 15px;
+        display: block !important;
+        min-width: 250px;
+        position: unset;
+    }
+}

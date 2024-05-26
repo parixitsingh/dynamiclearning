@@ -1,0 +1,22 @@
+.gallery {
+    float: left;
+    width: calc(100% - 80px);
+    margin-top: 15px;
+    margin-left: 40px;
+    min-width: 300px;
+}
+
+.gallery-heading{
+    float: left;
+}
+
+.gallery-content{
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    border-radius: 15px;
+    background-color: gray;
+    float:left;
+    padding-top:10px;
+    padding-bottom:10px;
+}

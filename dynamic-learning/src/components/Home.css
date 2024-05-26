@@ -1,0 +1,6 @@
+.home {
+    height: calc(100% - 80px);
+    float:left;
+    background-color: whitesmoke;
+    width:100%;
+}

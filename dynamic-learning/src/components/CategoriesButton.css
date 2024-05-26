@@ -1,0 +1,27 @@
+.categories-button{
+    float: left;
+    font-size: 18px;
+}
+
+.header-title-text {
+    color: white;
+}
+
+.categories-button:focus,
+.categories-button:hover {
+    color: grey;
+}
+
+.categories-button-text {
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+.categories-button-left-icon {
+    float: left;
+}
+
+.categories-button-right-icon {
+    float: right;
+    font-size: 15px;
+}
