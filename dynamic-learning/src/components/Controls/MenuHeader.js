@@ -1,7 +1,7 @@
 import React from 'react';
-import MenuBullet from '../Bullet/MenuBullet';
 import { FaListAlt } from "react-icons/fa";
 import "./MenuHeader.css";
+import MenuBullet from './Bullet/MenuBullet';
 
 function MenuHeader(props) {
     const onclick = (event)=>{
@@ -11,7 +11,7 @@ function MenuHeader(props) {
   return (
     <div className='menu-header'>
        <span className={ props.showMenuBtn ? 'menu-list-option ': 'hide' } onClick={ onclick }><FaListAlt /></span>
-       <span className={ props.showMenuBtn ? '' : 'menu-bullets' }>
+       <span className={ props.showMenuBtn ? 'scrollable' : 'menu-bullets scrollable' }>
         {props.data.rows.map((item, _) => (
           <MenuBullet data={item.topic} />
         ))}

@@ -1,9 +1,11 @@
 import React from 'react'
+import PageNavigationHeader from '../../Controls/PageNavigationHeader'
 
 function Introduction() {
   return (
     <div>
         <h2>Introduction to Golang</h2>
+        <PageNavigationHeader hideNextBtn={true} onPreviousBtn={"golang/index"} previousBtnTitle={"Home"}/>
         <ul>
             <li>Go is a cross-platform, open source programming language</li><li>Go can be used 
             to create high-performance applications</li>

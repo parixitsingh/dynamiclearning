@@ -1,6 +1,6 @@
 import React from 'react';
 import "./Gallery.css";
-import Bullet from '../Bullet/Bullet';
+import Bullet from '../Controls/Bullet/Bullet';
 
 function Gallery(props) {
     const rows = []; 

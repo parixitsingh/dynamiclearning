@@ -1,7 +1,7 @@
 import React from 'react';
 import "./Bullet.css";
 import { useNavigate } from "react-router-dom";
-import PopoverControl from '../Controls/PopoverControl';
+import PopoverControl from '../PopoverControl';
 
 function RowBullet(props) {
   const navigate = useNavigate();

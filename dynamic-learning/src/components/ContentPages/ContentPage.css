@@ -8,11 +8,13 @@
 
 .content-table{
     position: absolute;
+    z-index: 1;
 }
 
 .content-main {
     float:left;
     height:100%;
+    width: 100%;
 }
 
 .content-right-section{
@@ -38,5 +40,11 @@
         display: block !important;
         min-width: 250px;
         position: unset;
+    }
+
+    .content-main {
+        float:left;
+        height:100%;
+        width: calc(75% - 300px);
     }
 }

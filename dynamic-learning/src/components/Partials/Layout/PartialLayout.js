@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
-import MenuHeader from '../../ContentPages/MenuHeader';
+import MenuHeader from '../../Controls/MenuHeader';
 
 function PartialLayout(props) {
     const [showMenu, setShowMenu] = useState(false);

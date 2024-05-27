@@ -4,10 +4,11 @@ import Layout from './components/Layout';
 import About from './components/About';
 import NoPage from './components/NoPage';
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import GolangContainer from './components/Partials/Golang/Container';
-import PythonContainer from './components/Partials/Python/Container';
-import JavascriptContainer from './components/Partials/Javascript/Container';
-import ReactJsContainer from './components/Partials/ReactJs/Container';
+import Container from './components/Partials/Layout/Container';
+import GolangRoutes from './components/Partials/Golang/Routes';
+import PythonRoutes from './components/Partials/Python/Routes';
+import ReactJsRoutes from './components/Partials/ReactJs/Routes';
+import JavascriptRoutes from './components/Partials/Javascript/Routes';
 
 function App() {
   const headerData = {
@@ -25,15 +26,15 @@ function App() {
             page: "index"
           },
           {
-            topic:"Introduction",
+            topic:"JS Introduction",
             page:"introduction"
           },
           {
-            topic:"Functions and Variables",
+            topic:"JS Functions and Variables",
             page:"functions_and_variables"
           },
           {
-            topic: "Data Types",
+            topic: "JS Data Types",
             page:"data_types"
           }
         ]
@@ -110,10 +111,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Layout data = {headerData}/>}>
             <Route index element={<Home data = {data}/>} />
-            <Route path="/golang/*" element={<GolangContainer data={data.rows[2]} headerData={data}/>} />
-            <Route path="/python/*" element={<PythonContainer data={data.rows[1]} headerData={data}/>} /> 
-            <Route path="/javascript/*" element={<JavascriptContainer data={data.rows[0]} headerData={data}/>} /> 
-            <Route path="/reactjs/*" element={<ReactJsContainer data={data.rows[3]} headerData={data}/>} /> 
+            <Route path="/golang/*" element={<Container data={data.rows[2]} headerData={data} routes={GolangRoutes(data.rows[2])}/>} />
+            <Route path="/python/*" element={<Container data={data.rows[1]} headerData={data} routes={PythonRoutes(data.rows[1])}/>} />
+            <Route path="/javascript/*" element={<Container data={data.rows[0]} headerData={data} routes={JavascriptRoutes(data.rows[0])}/>} />
+            <Route path="/reactjs/*" element={<Container data={data.rows[3]} headerData={data} routes={ReactJsRoutes(data.rows[3])}/>} />
             <Route path="/about" element={<About />} />
             <Route path="*" element={<NoPage />} />
           </Route>
