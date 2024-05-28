@@ -64,20 +64,52 @@ function App() {
         topic:"Golang",
         topicList: [
           {
-            topic:"Home",
-            page: "index"
-          },
-          {
             topic:"Introduction",
-            page:"introduction"
+            page: "introduction"
           },
           {
-            topic:"Functions and Variables",
-            page:"functions_and_variables"
+            topic:"Environment",
+            page:"environment"
           },
           {
-            topic: "Data Types",
-            page:"data_types"
+            topic:"First Program",
+            page:"firstprogram"
+          },
+          {
+            topic: "Basic Syntax",
+            page:"basicsyntax"
+          },
+          {
+            topic:"Data Types",
+            page: "datatypes"
+          },
+          {
+            topic:"Control Structures",
+            page:"controlstructures"
+          },
+          {
+            topic:"Functions",
+            page:"functions"
+          },
+          {
+            topic: "Packages and Modules",
+            page:"packagesandmodules"
+          },
+          {
+            topic:"Structs and Interfaces",
+            page:"structsandinterfaces"
+          },
+          {
+            topic:"Concurrency",
+            page:"concurrency"
+          },
+          {
+            topic: "Error Handling",
+            page:"errorhandling"
+          },
+          {
+            topic: "Standard Library",
+            page:"standardlibrary"
           }
         ]
       },

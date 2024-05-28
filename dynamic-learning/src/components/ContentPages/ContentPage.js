@@ -15,7 +15,7 @@ function ContentPage(props) {
     <div className='content-container'>
       <Container fluid>
         <div className={ ctx.menu.showMenu ? 'content-table ': 'content-table hide'}>
-          <TableOfContent data = {props.data} showContent={showContent}/>
+          <TableOfContent data = {props.data} showContent={showContent} activeIndex={props.activeIndex}/>
         </div>
         <div className='content-main'>
           {props.content}
