@@ -1,5 +1,6 @@
 .section {
-    margin: 20px 0;
+    margin: 20px 20px 20px 0px;
+    text-align: justify;
 }
 h1, h2, h3 {
     color: #0056b3;

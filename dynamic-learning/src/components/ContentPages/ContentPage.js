@@ -8,14 +8,14 @@ function ContentPage(props) {
   const navigate = useNavigate();
   const ctx = useOutletContext();
   ctx.menuBtn.setShowMenuBtn(true);
-  const showContent = (topic, page) => {
-    navigate("/"+topic+"/"+page)
+  const showContent = (page) => {
+    navigate(props.details.DomainPath+page)
   };
   return (
     <div className='content-container'>
       <Container fluid>
         <div className={ ctx.menu.showMenu ? 'content-table ': 'content-table hide'}>
-          <TableOfContent data = {props.data} showContent={showContent} activeIndex={props.activeIndex}/>
+          <TableOfContent data={props.details} showContent={showContent} activeIndex={props.activeIndex}/>
         </div>
         <div className='content-main'>
           {props.content}

@@ -4,14 +4,14 @@ import "./TableOfContent.css";
 import TableOfContentItem from './TableOfContentItem';
 
 function TableOfContent(props) {
-    const topicDisplayName = props.data.topic + " Tutorial";
+    const topicDisplayName = props.data.Topic + " Tutorial";
     const items = [];
     const callBack = (page) => {
-        props.showContent(props.data.topic.toLowerCase(), page)
+        props.showContent(page)
     };
-    for (let i = 0; i < props.data.topicList.length; i++){
+    for (let i = 0; i < props.data.Pages.length; i++){
         let data = {
-            item : props.data.topicList[i],
+            item : props.data.Pages[i],
             callBack: callBack,
             activeIndex: props.activeIndex,
             currentIndex: i

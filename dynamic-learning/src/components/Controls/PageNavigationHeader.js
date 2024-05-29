@@ -8,7 +8,7 @@ import "./PageNavigationHeader.css";
 function PageNavigationHeader(props) {
     const navigate = useNavigate();
     const navigateTo = (path) => {
-        navigate("/"+path)
+        navigate(path)
     }
     let previousBtnTitle = "Previous"
     let nextBtnTitle = "Next"

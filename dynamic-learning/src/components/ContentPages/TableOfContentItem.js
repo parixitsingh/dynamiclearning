@@ -4,7 +4,7 @@ import ListGroup from 'react-bootstrap/ListGroup';
 function TableOfContentItem(props) {
   const onClick = (event) => {
     event.preventDefault();
-    props.data.callBack(props.data.item.page);
+    props.data.callBack(props.data.item.Path);
     if (props.onClick) {
       props.onClick(props.data);
     }
@@ -12,7 +12,7 @@ function TableOfContentItem(props) {
 
   return (
     <ListGroup.Item key={props.data.name} as="li" onClick={onClick} active={ props.data.activeIndex === props.data.currentIndex}>
-      {props.data.item.topic}
+      {props.data.item.IndexTitle}
     </ListGroup.Item>
   );
 }
