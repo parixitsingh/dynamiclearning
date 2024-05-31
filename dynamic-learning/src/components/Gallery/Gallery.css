@@ -7,7 +7,10 @@
 }
 
 .gallery-heading{
-    float: left;
+    text-align: center;
+    color: white;
+    font: 600;
+    font-size: 30px;
 }
 
 .gallery-content{
@@ -15,8 +18,19 @@
     text-align: center;
     box-sizing: border-box;
     border-radius: 15px;
-    background-color: gray;
     float:left;
     padding-top:10px;
     padding-bottom:10px;
+}
+
+.gallery-graphic-content{
+    background-image: url('./images/polynomialshapes.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 100%;
+    min-height: 400px;
+    height: 100%;
+    float: left;
+    text-align: center;
+    padding-top: 20px;
 }
