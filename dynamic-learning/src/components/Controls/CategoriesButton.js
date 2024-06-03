@@ -16,6 +16,7 @@ function CategoriesButton(props) {
             title= { title }
             menuVariant="dark"
             className="header-title-text"
+            align={{ lg: 'start' }}
         >
             <NavDropdown.Header>
                 <span className="categories-button-text">{ headerTitle }</span>

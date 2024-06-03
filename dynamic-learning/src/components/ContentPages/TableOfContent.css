@@ -12,4 +12,5 @@
 li:not(.active):hover{
     color: var(--bs-list-group-active-color);
     background-color: var(--bs-list-group-active-bg);
+    opacity: 0.6;
 }

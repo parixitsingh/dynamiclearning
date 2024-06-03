@@ -7,7 +7,6 @@ let JavascriptCourse = {
             IndexTitle: "Introduction",
             Path: "/introduction",
             Content : <div class="section">
-                <h3>Lesson 1: What is JavaScript?</h3>
                 <p>JavaScript is a versatile programming language commonly used in web development. It allows developers to create interactive and dynamic web pages.</p>
                 <p><strong>History and Evolution:</strong> JavaScript was created by Brendan Eich in 1995 and has since evolved with many updates, the most significant being ES6 (ECMAScript 2015).</p>
                 <p><strong>JavaScript in the Browser vs. Server-side (Node.js):</strong> JavaScript runs in the browser to control web page behavior. Node.js allows JavaScript to run on the server, enabling backend development.</p>

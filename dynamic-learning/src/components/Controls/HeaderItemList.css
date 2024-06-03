@@ -1,0 +1,8 @@
+.header-items-list-content > .dropdown-toggle::after{
+    display: none;
+}
+
+.header-items-list-content > .dropdown-menu > .header-item{
+    display: block;
+    padding: 5px 10px;
+}

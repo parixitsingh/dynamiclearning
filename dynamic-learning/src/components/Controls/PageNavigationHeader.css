@@ -1,3 +1,12 @@
 .nav-btn{
     z-index: -1;
 }
+
+svg {
+    margin-bottom:3px;
+}
+
+.page-navigation-header-content{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}

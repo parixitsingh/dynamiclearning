@@ -5,17 +5,39 @@
     text-align: center;
     background-color: grey;
     line-height:40px;
+    position: fixed;
+    z-index: 3;
+    margin-top:56px;
+    overflow: hidden;
 }
 
 .menu-list-option{
     color: white;
     font-size: 16px;
     float: left;
-    margin-left: 15px;
+    padding-left: 15px;
+    padding-right: 10px;
+    width: 40px;
 }
 
 .menu-bullets{
     margin-left: 31px;
+}
+
+.scrollable {
+    overflow: auto;
+    width: calc(100% - 57px);
+    height: 57px;
+    padding-right: 17px; /* Increase/decrease this value for cross-browser compatibility */
+    box-sizing: content-box; /* So the width will be 100% + 17px */
+}
+.menu-list-container{
+    width: max-content;
+    height: 40px;
+}
+
+.menu-list-container > .menu-bullet:nth-child(1){
+    padding-left: 10px;
 }
 
 @media (min-width: 992px) {

@@ -1,9 +1,22 @@
-.navigation-bar{
-    background-color: #7fffd4;
-    padding-top: 10px;
-    padding-bottom: 10px;
+.nagivation-header{
+    position: fixed !important;
     width: 100%;
-    float: left;
+    z-index: 4;
+    height: 56px;
+}
+
+.nagivation-header > .navbar {
+    height: 56px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.nagivation-header > .navbar > .header-item > .nav-item {
+    margin-right: 15px;
+}
+
+.nagivation-header > .navbar > span {
+    color : lightgray;
 }
 
 .title{
@@ -29,4 +42,20 @@
     float: right;
     height: 100%;
     padding-right: 10px;
+}
+
+.header-item{
+    display: none;
+}
+.header-items-list{
+    display: block;
+}
+
+@media (min-width: 992px) {
+    .header-item{
+        display: block;
+    }
+    .header-items-list{
+        display: none;
+    }
 }

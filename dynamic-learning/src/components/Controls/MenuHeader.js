@@ -10,12 +10,14 @@ function MenuHeader(props) {
     }
   return (
     <div className='menu-header'>
-       <span className={ props.showMenuBtn ? 'menu-list-option ': 'hide' } onClick={ onclick }><FaListAlt /></span>
-       <span className={ props.showMenuBtn ? 'scrollable' : 'menu-bullets scrollable' }>
-        {props.data.rows.map((item, _) => (
-          <MenuBullet data={item.topic} />
-        ))}
-       </span>
+       <div className={ props.showMenuBtn ? 'menu-list-option ': 'hide' } onClick={ onclick }><FaListAlt /></div>
+       <div className={ props.showMenuBtn ? 'scrollable' : 'menu-bullets scrollable' }>
+        <div className='menu-list-container'>
+          {props.data.rows.map((item, _) => (
+            <MenuBullet data={item.topic} />
+          ))}
+        </div>
+       </div>
     </div>
   )
 }

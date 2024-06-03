@@ -4,6 +4,7 @@ import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import { useNavigate } from "react-router-dom";
 import "./PageNavigationHeader.css";
+import { FaChevronLeft,  FaChevronRight} from "react-icons/fa";
 
 function PageNavigationHeader(props) {
     const navigate = useNavigate();
@@ -38,18 +39,18 @@ function PageNavigationHeader(props) {
     const navigationButtons = [];
 
     if (!props.hidePreviousBtn) {
-        navigationButtons.push(<Button variant="outline-success" onClick={onPreviousBtn} class="nav-btn">{previousBtnTitle}</Button>)
+        navigationButtons.push(<Button variant="outline-success" onClick={onPreviousBtn} class="nav-btn"><span><FaChevronLeft/></span><span>{previousBtnTitle}</span></Button>)
     } else {
         navigationButtons.push(<span></span>)
     }
 
     if (!props.hideNextBtn) {
-        navigationButtons.push(<Button variant="outline-success" onClick={onNextBtn} class="nav-btn">{nextBtnTitle}</Button>)
+        navigationButtons.push(<Button variant="outline-success" onClick={onNextBtn} class="nav-btn"><span>{nextBtnTitle}</span><span><FaChevronRight/></span></Button>)
     }
 
     return (
         <Navbar expand="lg" className="">
-          <Container fluid>
+          <Container fluid className='page-navigation-header-content'>
             { navigationButtons }
           </Container>
         </Navbar>
