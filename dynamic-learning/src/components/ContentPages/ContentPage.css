@@ -3,13 +3,13 @@
     width: 100%;
     height: auto;
     min-height: 80%;
-    margin-top:106px;
+    margin-top:96px;
 }
 
 .content-table{
     position: fixed;
     z-index: 1;
-    max-height: calc(100% - 120px);
+    max-height: calc(100% - 96px);
     overflow: auto;
 }
 
@@ -17,6 +17,9 @@
     float:left;
     height:100%;
     width: 100%;
+    padding-top:10px;
+    padding-left:20px;
+    padding-right: 20px;
 }
 
 .content-right-section{
@@ -34,20 +37,33 @@
     padding-bottom: 5px;
 }
 
+.content-fluid-container{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
 @media (min-width: 992px) {
     .content-table{
         float:left;
         display: block !important;
-        min-width: 250px;
-        max-height: calc(100% - 120px);
+        width: 250px;
+        max-height: calc(100% - 96px);
         position: fixed;
         overflow: auto;
+    }
+
+    .content-main-container{
+        width: calc(100% - 250px);
+        margin-left: 250px;
+        float:left;
     }
 
     .content-main {
         float:left;
         height:100%;
-        width: calc(75% - 300px);
-        margin-left: 275px;
+        width: 75%;
+        padding-left:15px;
+        padding-top:10px;
+        padding-right:0px;
     }
 }
