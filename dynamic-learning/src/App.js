@@ -11,6 +11,7 @@ import GolangCourse from './components/Partials/Golang/GolangCourse';
 import JavascriptCourse from './components/Partials/Javascript/JavascriptCourse';
 import ReactJSCourse from './components/Partials/ReactJs/ReactJsCourse';
 import JavaCourse from './components/Partials/Java/JavaCourse';
+import GiveItTry from './components/ContentPages/GiveItTry';
 
 function App() {
   const headerData = {
@@ -73,6 +74,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="*" element={<NoPage />} />
           </Route>
+          <Route path="/letstry/*" element={<GiveItTry />} />
         </Routes>
       </Router>
     </>

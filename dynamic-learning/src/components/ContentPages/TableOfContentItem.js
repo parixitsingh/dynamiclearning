@@ -11,7 +11,7 @@ function TableOfContentItem(props) {
   };
 
   return (
-    <ListGroup.Item key={props.data.name} as="li" onClick={onClick} active={ props.data.activeIndex === props.data.currentIndex}>
+    <ListGroup.Item key={props.data.name} as="li" onClick={onClick} active={ props.data.activeIndex === props.data.currentIndex} className='table-item'>
       {props.data.item.IndexTitle}
     </ListGroup.Item>
   );

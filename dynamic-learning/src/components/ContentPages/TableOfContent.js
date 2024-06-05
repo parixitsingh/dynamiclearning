@@ -1,4 +1,4 @@
-import React, { useState }  from 'react';
+import React from 'react';
 import ListGroup from 'react-bootstrap/ListGroup';
 import "./TableOfContent.css";
 import TableOfContentItem from './TableOfContentItem';
@@ -20,7 +20,7 @@ function TableOfContent(props) {
     }
   return (
     <div>
-        <ListGroup as="ul">
+        <ListGroup as="ul" className='table-list'>
             <ListGroup.displayName >
                 <div className='list-header'>
                     { topicDisplayName }

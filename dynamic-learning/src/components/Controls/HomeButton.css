@@ -12,6 +12,7 @@
 .home-button-text {
     padding-left: 3px;
     padding-right: 3px;
+    cursor: pointer;
 }
 
 .home-button-icon {

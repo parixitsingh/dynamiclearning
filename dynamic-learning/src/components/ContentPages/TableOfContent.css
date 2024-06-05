@@ -6,9 +6,26 @@
     font-size: 22px;
     padding-left: 10px;
     font-weight: 500;
+    background: white ;
 }
 
-li:not(.active):hover{
+.table-list{
+    border-right: 1px solid lightgray;
+    border-radius: 0 !important;
+}
+
+.table-item{
+    border-right: 0 !important;
+    cursor: pointer;
+}
+
+.table-item:not(.active):hover{
     color: var(--bs-list-group-active-color);
-    background-color: lightskyblue;
+    background-color: rgb(149, 148, 148);
+}
+
+.table-item.active{
+    color: var(--bs-list-group-active-color);
+    background-color:#198754 !important;
+    border: #198754 !important;
 }

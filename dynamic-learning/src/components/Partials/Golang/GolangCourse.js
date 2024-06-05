@@ -1,3 +1,5 @@
+import Example from "../Common/Example";
+
 let GolangCourse = {
     Topic: "Go",
     DomainPath: "/go",
@@ -26,7 +28,7 @@ let GolangCourse = {
                             </li>
                             <li>
                                 <strong>Your first Go program: "Hello, World!":</strong>
-                                <pre class="code">{`
+                                <Example content={`
 package main
 
 import "fmt"
@@ -34,7 +36,7 @@ import "fmt"
 func main() {
     fmt.Println("Hello, World!")
 }
-                                `}</pre>
+                                `} />
                                 <p>Save this code in a file named <code>hello.go</code>, and run it using <code>go run hello.go</code>. This is the simplest Go program that prints "Hello, World!" to the console.</p>
                             </li>
                         </ul>
@@ -49,11 +51,11 @@ func main() {
                             <li>
                                 <strong>Variables and Constants:</strong>
                                 <p>In Go, variables are explicitly declared and used by the compiler to check the type-correctness of function calls. Constants, like variables, hold values but their values cannot be changed.</p>
-                                <pre class="code">{`
+                                <Example content={`
 var name string = "John"
 var age int = 30
 const pi = 3.14
-                                `}</pre>
+                                `} />
                             </li>
                             <li>
                                 <strong>Data Types:</strong>
@@ -75,7 +77,7 @@ const pi = 3.14
                             <li>
                                 <strong>Conditional Statements:</strong>
                                 <p>Conditional statements are used to perform different actions based on different conditions. The most common conditional statements are <code>if</code>, <code>else if</code>, <code>else</code>, and <code>switch</code>.</p>
-                                <pre class="code">{`
+                                <Example content={`
 if age >= 18 {
     fmt.Println("Adult")
 } else {
@@ -90,12 +92,12 @@ case 2:
 default:
     fmt.Println("Other day")
 }
-                                `}</pre>
+                                `} />
                             </li>
                             <li>
                                 <strong>Loops:</strong>
                                 <p>Go only has one looping construct, the <code>for</code> loop, which can be used in various forms. <code>for</code> loops are used to iterate over a sequence (like an array, slice, map, or string).</p>
-                                <pre class="code">{`
+                                <Example content={`
 for i := 0; i < 10; i++ {
     fmt.Println(i)
 }
@@ -104,7 +106,7 @@ numbers := []int{1, 2, 3, 4, 5}
 for index, value := range numbers {
     fmt.Println(index, value)
 }
-                                `}</pre>
+                                `} />
                             </li>
                         </ul>
             </div>
@@ -118,7 +120,7 @@ for index, value := range numbers {
                             <li>
                                 <strong>Defining and Calling Functions:</strong>
                                 <p>Functions are blocks of code that perform a specific task. They can take parameters and return results. Functions in Go are defined using the <code>func</code> keyword.</p>
-                                <pre class="code">{`
+                                <Example content={`
 func greet(name string) string {
     return "Hello, " + name
 }
@@ -127,12 +129,12 @@ func main() {
     message := greet("Alice")
     fmt.Println(message)
 }
-                                `}</pre>
+                                `} />
                             </li>
                             <li>
                                 <strong>Multiple Return Values:</strong>
                                 <p>Functions in Go can return multiple values, which is useful for returning both result and error values from functions.</p>
-                                <pre class="code">{`
+                                <Example content={`
 func swap(a, b int) (int, int) {
     return b, a
 }
@@ -141,12 +143,12 @@ func main() {
     x, y := swap(3, 4)
     fmt.Println(x, y)
 }
-                                `}</pre>
+                                `} />
                             </li>
                             <li>
                                 <strong>Variadic Functions:</strong>
                                 <p>Variadic functions can accept a variable number of arguments. The function parameter is preceded by <code>...</code> to indicate that it can take zero or more of those arguments.</p>
-                                <pre class="code">{`
+                                <Example content={`
 func sum(numbers ...int) int {
     total := 0
     for _, number := range numbers {
@@ -159,7 +161,7 @@ func main() {
     result := sum(1, 2, 3, 4, 5)
     fmt.Println(result)
 }
-                                `}</pre>
+                                `} />
                             </li>
                         </ul>
             </div>
@@ -173,7 +175,7 @@ func main() {
                             <li>
                                 <strong>Arrays and Slices:</strong>
                                 <p>Arrays in Go have a fixed length, whereas slices are more flexible and can grow and shrink in size. Slices are built on top of arrays and provide a more convenient and powerful interface.</p>
-                                <pre class="code">{`
+                                <Example content={`
 // Array
 var arr [3]int
 arr[0] = 1
@@ -183,12 +185,12 @@ arr[2] = 3
 // Slice
 s := []int{1, 2, 3, 4}
 s = append(s, 5)
-                                `}</pre>
+                                `} />
                             </li>
                             <li>
                                 <strong>Maps:</strong>
                                 <p>Maps are unordered collections of key-value pairs. They are optimized for fast lookups by keys. Maps are declared using the <code>make</code> function or by using map literals.</p>
-                                <pre class="code">{`
+                                <Example content={`
 // Declare and initialize a map
 ages := map[string]int{
     "Alice": 30,
@@ -200,12 +202,12 @@ ages["Charlie"] = 35
 
 // Retrieve a value
 fmt.Println(ages["Alice"])
-                                `}</pre>
+                                `} />
                             </li>
                             <li>
                                 <strong>Structs:</strong>
                                 <p>Structs are used to group together data elements. They are defined with the <code>type</code> keyword and a struct literal. Structs can have fields, which can be accessed using the dot notation.</p>
-                                <pre class="code">{`
+                                <Example content={`
 type Person struct {
     Name string
     Age  int
@@ -215,7 +217,7 @@ func main() {
     p := Person{Name: "Alice", Age: 30}
     fmt.Println(p.Name)
 }
-                                `}</pre>
+                                `} />
                             </li>
                         </ul>
             </div>
@@ -229,7 +231,7 @@ func main() {
                             <li>
                                 <strong>Defining Methods:</strong>
                                 <p>Methods are functions with a special receiver argument. The receiver can be a value or a pointer. Methods allow you to define behaviors for your structs.</p>
-                                <pre class="code">{`
+                                <Example content={`
 type Rectangle struct {
     Width, Height int
 }
@@ -243,12 +245,12 @@ func main() {
     r := Rectangle{Width: 10, Height: 5}
     fmt.Println(r.Area())
 }
-                                `}</pre>
+                                `} />
                             </li>
                             <li>
                                 <strong>Pointer Receivers:</strong>
                                 <p>Pointer receivers allow methods to modify the value that the receiver points to. They also avoid copying the value on each method call, which can be more efficient for large structs.</p>
-                                <pre class="code">{`
+                                <Example content={`
 func (r *Rectangle) Scale(factor int) {
     r.Width *= factor
     r.Height *= factor
@@ -259,7 +261,7 @@ func main() {
     r.Scale(2)
     fmt.Println(r.Width, r.Height)
 }
-                                `}</pre>
+                                `} />
                             </li>
                         </ul>
         </div>
@@ -273,7 +275,7 @@ func main() {
                             <li>
                                 <strong>Defining Interfaces:</strong>
                                 <p>Interfaces are types that specify a set of method signatures. Any type that implements these methods is considered to implement the interface. Interfaces enable polymorphism in Go.</p>
-                                <pre class="code">{`
+                                <Example content={`
 type Shape interface {
     Area() int
 }
@@ -294,17 +296,17 @@ func main() {
     r := Rectangle{Width: 10, Height: 5}
     printArea(r)
 }
-                                `}</pre>
+                                `} />
                             </li>
                             <li>
                                 <strong>Type Assertions:</strong>
                                 <p>Type assertions provide access to an interface's underlying concrete value. It can be used to convert an interface type to its concrete type.</p>
-                                <pre class="code">{`
+                                <Example content={`
 var i interface{} = "hello"
 
 s, ok := i.(string)
 fmt.Println(s, ok)
-                                `}</pre>
+                                `} />
                             </li>
                         </ul>
             </div>
@@ -318,18 +320,18 @@ fmt.Println(s, ok)
                             <li>
                                 <strong>Goroutines:</strong>
                                 <p>Goroutines are functions or methods that run concurrently with other functions or methods. They are extremely lightweight and are managed by the Go runtime.</p>
-                                <pre class="code">{`
+                                <Example content={`
 go func() {
     fmt.Println("In a goroutine")
 }()
 
 fmt.Println("In main function")
-                                `}</pre>
+                                `} />
                             </li>
                             <li>
                                 <strong>Channels:</strong>
                                 <p>Channels are a way for goroutines to communicate with each other and synchronize their execution. Channels can be buffered or unbuffered and are typed by the values they convey.</p>
-                                <pre class="code">{`
+                                <Example content={`
 ch := make(chan int)
 
 go func() {
@@ -338,12 +340,12 @@ go func() {
 
 value := <-ch
 fmt.Println(value)
-                                `}</pre>
+                                `} />
                             </li>
                             <li>
                                 <strong>Select Statement:</strong>
                                 <p>The <code>select</code> statement lets a goroutine wait on multiple communication operations. It blocks until one of its cases can run, then it executes that case.</p>
-                                <pre class="code">{`
+                                <Example content={`
 ch1 := make(chan string)
 ch2 := make(chan string)
 
@@ -361,7 +363,7 @@ case msg1 := <-ch1:
 case msg2 := <-ch2:
     fmt.Println(msg2)
 }
-                                `}</pre>
+                                `} />
                             </li>
                         </ul>
             </div>
@@ -375,27 +377,27 @@ case msg2 := <-ch2:
                             <li>
                                 <strong>Error Types:</strong>
                                 <p>In Go, errors are represented by the built-in <code>error</code> type. Error handling is explicit, which means errors must be checked and handled by the programmer.</p>
-                                <pre class="code">{`
+                                <Example content={`
 if err != nil {
     fmt.Println("Error:", err)
 }
-                                `}</pre>
+                                `} />
                             </li>
                             <li>
                                 <strong>Handling Errors:</strong>
                                 <p>Errors are often returned as the last return value of a function. The caller is responsible for checking the error value to determine if the function succeeded.</p>
-                                <pre class="code">{`
+                                <Example content={`
 file, err := os.Open("test.txt")
 if err != nil {
     log.Fatal(err)
 }
 defer file.Close()
-                                `}</pre>
+                                `} />
                             </li>
                             <li>
                                 <strong>Custom Errors:</strong>
                                 <p>Custom error types can be created by implementing the <code>Error()</code> method from the <code>error</code> interface. This allows for more detailed and specific error messages.</p>
-                                <pre class="code">{`
+                                <Example content={`
 type MyError struct {
     Msg string
 }
@@ -408,7 +410,7 @@ func main() {
     err := &MyError{Msg: "Something went wrong"}
     fmt.Println(err)
 }
-                                `}</pre>
+                                `} />
                             </li>
                         </ul>
             </div>
@@ -422,7 +424,7 @@ func main() {
                             <li>
                                 <strong>Creating Packages:</strong>
                                 <p>Packages in Go allow you to group related code together and make it reusable. A package consists of one or more .go source files in a single directory.</p>
-                                <pre class="code">{`
+                                <Example content={`
 // mathutils/mathutils.go
 package mathutils
 
@@ -442,15 +444,15 @@ func main() {
     result := mathutils.Add(2, 3)
     fmt.Println(result)
 }
-`}</pre>
+`} />
                             </li>
                             <li>
                                 <strong>Managing Dependencies with Go Modules:</strong>
                                 <p>Go modules are used to manage dependencies and versions in your Go projects. A module is a collection of related Go packages that are versioned together.</p>
-                                <pre class="code">{`
+                                <Example content={`
 go mod init mymodule
 go get -u github.com/some/dependency
-`}</pre>
+`} />
                             </li>
                         </ul>
             </div>
@@ -464,7 +466,7 @@ go get -u github.com/some/dependency
                             <li>
                                 <strong>Writing Tests:</strong>
                                 <p>Testing is an important part of software development. Go provides a testing framework in the <code>testing</code> package, which is used to write and run tests.</p>
-                                <pre class="code">{`
+                                <Example content={`
 package mathutils
 
 import "testing"
@@ -475,28 +477,28 @@ func TestAdd(t *testing.T) {
         t.Errorf("Add(2, 3) = %d; want 5", result)
     }
 }
-                                `}</pre>
+                                `} />
                             </li>
                             <li>
                                 <strong>Benchmarking:</strong>
                                 <p>Benchmark tests are used to measure the performance of your code. They are written similarly to normal tests but with a special <code>testing.B</code> type.</p>
-                                <pre class="code">{`
+                                <Example content={`
 func BenchmarkAdd(b *testing.B) {
     for i := 0; i < b.N; i++ {
         Add(2, 3)
     }
 }
-                                `}</pre>
+                                `} />
                             </li>
                             <li>
                                 <strong>Example Tests:</strong>
                                 <p>Example tests are used to document the usage of your code. They are written as functions that start with <code>Example</code> and contain calls to <code>fmt.Println</code>.</p>
-                                <pre class="code">{`
+                                <Example content={`
 func ExampleAdd() {
     fmt.Println(Add(2, 3))
     // Output: 5
 }
-                                `}</pre>
+                                `} />
                             </li>
                         </ul>
             </div>
@@ -510,7 +512,7 @@ func ExampleAdd() {
                             <li>
                                 <strong>Understanding Reflection:</strong>
                                 <p>Reflection in Go allows you to inspect the type and value of variables at runtime. It is particularly useful for writing functions that can operate on variables of unknown types.</p>
-                                <pre class="code">{`
+                                <Example content={`
 import (
     "fmt"
     "reflect"
@@ -521,15 +523,15 @@ func main() {
     fmt.Println("type:", reflect.TypeOf(x))
     fmt.Println("value:", reflect.ValueOf(x))
 }
-                                `}</pre>
+                                `} />
                             </li>
                             <li>
                                 <strong>Using Reflect Package:</strong>
                                 <p>The <code>reflect</code> package provides various methods to examine and manipulate the internals of a program.</p>
-                                <pre class="code">{`
+                                <Example content={`
 v := reflect.ValueOf(3.4)
 fmt.Println("kind:",v.Kind()) // kind: float64
-                                `}</pre>
+                                `} />
                             </li>
                         </ul>
             </div>
@@ -543,7 +545,7 @@ fmt.Println("kind:",v.Kind()) // kind: float64
                             <li>
                                 <strong>Mutexes:</strong>
                                 <p>Mutexes are used to synchronize access to shared resources. They ensure that only one goroutine accesses the critical section of code at a time.</p>
-                                <pre class="code">{`
+                                <Example content={`
 import (
     "fmt"
     "sync"
@@ -572,12 +574,12 @@ func main() {
     wg.Wait()
     fmt.Println("Final counter value:", counter)
 }
-                                `}</pre>
+                                `} />
                             </li>
                             <li>
                                 <strong>WaitGroups:</strong>
                                 <p>WaitGroups are used to wait for a collection of goroutines to finish executing. They provide a simple way to synchronize goroutines.</p>
-                                <pre class="code">{`
+                                <Example content={`
 import (
     "fmt"
     "sync"
@@ -599,12 +601,12 @@ func main() {
     wg.Wait()
     fmt.Println("All workers done")
 }
-                                `}</pre>
+                                `} />
                             </li>
                             <li>
                                 <strong>Concurrency Patterns:</strong>
                                 <p>Go supports various concurrency patterns like worker pools, pipelines, and fan-in/fan-out to efficiently manage concurrent tasks.</p>
-                                <pre class="code">{`
+                                <Example content={`
 // Worker Pool Example
 func worker(id int, jobs <-chan int, results chan<- int) {
     for j := range jobs {
@@ -632,7 +634,7 @@ func main() {
         <-results
     }
 }
-                                `}</pre>
+                                `} />
                             </li>
                         </ul>
             </div>
@@ -646,7 +648,7 @@ func main() {
                             <li>
                                 <strong>Creating a Basic Web Server:</strong>
                                 <p>Go provides a powerful <code>net/http</code> package for building web servers. You can create a simple web server by defining handlers for different routes.</p>
-                                <pre class="code">{`
+                                <Example content={`
 import (
     "fmt"
     "net/http"
@@ -660,12 +662,12 @@ func main() {
     http.HandleFunc("/", handler)
     http.ListenAndServe(":8080", nil)
 }
-                                `}</pre>
+                                `} />
                             </li>
                             <li>
                                 <strong>Using Templates:</strong>
                                 <p>Templates in Go are used to generate HTML dynamically. They allow you to embed Go code within your HTML to render data.</p>
-                                <pre class="code">{`
+                                <Example content={`
 import (
     "html/template"
     "net/http"
@@ -680,8 +682,8 @@ func main() {
     http.HandleFunc("/", handler)
     http.ListenAndServe(":8080", nil)
 }
-                                `}</pre>
-                                <pre class="code">{`
+                                `} />
+                                <Example content={`
 <!-- template.html -->
 <!DOCTYPE html>
 <html>
@@ -692,7 +694,7 @@ func main() {
     <h1>{{.}}</h1>
 </body>
 </html>
-                                `}</pre>
+                                `} />
                             </li>
                         </ul>
             </div>
