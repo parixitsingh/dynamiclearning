@@ -7,8 +7,10 @@
 }
 
 .content-table{
-    position: absolute;
+    position: fixed;
     z-index: 1;
+    max-height: calc(100% - 120px);
+    overflow: auto;
 }
 
 .content-main {
@@ -35,16 +37,17 @@
 @media (min-width: 992px) {
     .content-table{
         float:left;
-        height: 100%;
-        padding-right: 15px;
         display: block !important;
         min-width: 250px;
-        position: unset;
+        max-height: calc(100% - 120px);
+        position: fixed;
+        overflow: auto;
     }
 
     .content-main {
         float:left;
         height:100%;
         width: calc(75% - 300px);
+        margin-left: 275px;
     }
 }

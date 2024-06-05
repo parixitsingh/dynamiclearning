@@ -41,14 +41,6 @@
 }
 
 @media (min-width: 992px) {
-    .content-table{
-        float:left;
-        height: 100%;
-        padding-right: 15px;
-        display: block;
-        min-width: 250px;
-        position: unset;
-    }
     .menu-list-option {
         display: none;
     }
