@@ -2,7 +2,7 @@ import React from 'react'
 
 function NoPage() {
   return (
-    <div>NoPage</div>
+    <div className='page-not-found'></div>
   )
 }
 

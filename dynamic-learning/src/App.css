@@ -5,3 +5,15 @@
 body {
     height: 100vh;
 }
+
+.page-not-found {
+    background-image: url('../public/pagenotfound.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 100%;
+    min-height: 400px;
+    height: 100vh;
+    float: left;
+    text-align: center;
+    padding-top: 106px;
+}

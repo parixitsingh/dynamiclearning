@@ -4,7 +4,7 @@ import "./Example.css";
 function Example(props) {
   const onClick = ()=>{
     let urlSuffix = props.URLSuffix || "";
-    window.open("http://localhost:3000/letstry/" + urlSuffix, "_blank");
+    window.open("/letstry?example=first" + urlSuffix, "_blank");
   };
   return (
     <div className='example-container'>
