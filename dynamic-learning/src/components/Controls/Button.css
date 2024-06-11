@@ -1,0 +1,17 @@
+.button-container {
+    text-align: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: green;
+    height: 30px;
+    line-height: 28px;
+    color: white;
+    font-size: 16px;
+    display: inline-block;
+    border-radius: 5px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.button-container:hover{
+    cursor: pointer;
+}

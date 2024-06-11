@@ -74,7 +74,8 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="*" element={<NoPage />} />
           </Route>
-          <Route path="/letstry/*" element={<GiveItTry />} />
+          <Route path={"/letstry"+GolangCourse.DomainPath+"/*"} element={<GiveItTry domain={GolangCourse.DomainPath}/>} />
+          <Route path="/letstry/python/*" element={<GiveItTry />} />
         </Routes>
       </Router>
     </>
