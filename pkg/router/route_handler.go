@@ -6,22 +6,26 @@ import (
 )
 
 type RouteHandler struct {
-	pattern string
-	method  string
-	handler Handler
+	handlers map[string]Handler
 }
 
 func (rh *RouteHandler) ServeHTTP(rw http.ResponseWriter, req *http.Request) {
-	data, _ := rh.handler(req)
+	if rh.handlers[req.Method] == nil {
+		rw.WriteHeader(http.StatusMethodNotAllowed)
+		return
+	}
+	data, _ := rh.handlers[req.Method](req)
 	dataBytes, _ := json.Marshal(data)
 	rw.Write(dataBytes)
 	rw.WriteHeader(http.StatusOK)
 }
 
-func NewRouteHandler(pattern, method string, handler Handler) *RouteHandler {
+func NewRouteHandler() *RouteHandler {
 	return &RouteHandler{
-		pattern: pattern,
-		method:  method,
-		handler: handler,
+		handlers: make(map[string]Handler),
 	}
+}
+
+func (rh *RouteHandler) RegisterHandler(method string, handler Handler) {
+	rh.handlers[method] = handler
 }

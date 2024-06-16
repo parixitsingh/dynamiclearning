@@ -1,20 +1,23 @@
 package exampleservice
 
 import (
+	"dynamiclearning/pkg/filemanager"
 	"dynamiclearning/pkg/models"
-	"errors"
+	"encoding/json"
 	"fmt"
+	"go/format"
 	"io"
 	"net/http"
-	"os"
-	"os/exec"
 )
 
 func NewExampleService() IExampleService {
-	return &exampleService{}
+	return &exampleService{
+		fileManager: filemanager.NewFileManager(),
+	}
 }
 
 type exampleService struct {
+	fileManager filemanager.IFileManager
 }
 
 func (es *exampleService) GetExample(req *http.Request) (interface{}, error) {
@@ -24,12 +27,12 @@ func (es *exampleService) GetExample(req *http.Request) (interface{}, error) {
 	var err error
 	switch example {
 	case "first":
-		program, err = readProgram(dir + example)
+		program, err = es.fileManager.ReadFile("main.go", dir+example)
 		fmt.Printf("program %s and %v", program, err)
 		if err != nil {
 			return nil, err
 		}
-		result, err = execute(dir + example)
+		result, err = es.fileManager.ExecuteFile("main.go", dir+example, "go", []string{"run"})
 		fmt.Printf("result %s and %v", result, err)
 		if err != nil {
 			return nil, err
@@ -41,38 +44,58 @@ func (es *exampleService) GetExample(req *http.Request) (interface{}, error) {
 	}, nil
 }
 
-func execute(filePath string) ([]byte, error) {
-	// Check if the directory exists
-	if _, err := os.Stat(filePath); os.IsNotExist(err) {
-		fmt.Printf("Directory does not exist: %s\n", filePath)
-		return nil, errors.New("internal server error")
+func (es *exampleService) PostExample(req *http.Request) (interface{}, error) {
+	// dir := `D:\MyDream\DynamicLearning\pkg\codeexamples\go\first`
+	example := req.URL.Query().Get("example")
+	result := []byte{}
+	var body []byte
+	var err error
+	switch example {
+	case "custom":
+		body, err = io.ReadAll(req.Body)
+		if err != nil {
+			return nil, err
+		}
+		var bodyStr string
+		json.Unmarshal(body, &bodyStr)
+
+		defer req.Body.Close()
+		result, err = es.fileManager.ExecuteTempContent([]byte(bodyStr), "go", "go", []string{"run"})
+		fmt.Printf("result %s and error %v", result, err)
+		if err != nil && result == nil {
+			return nil, err
+		}
 	}
 
-	// Define the command and arguments
-	cmd := exec.Command("go", "run", "main.go")
+	out := &models.ExampleModel{
+		Result: string(result),
+	}
 
-	// Set the directory where the command should be executed
-	cmd.Dir = filePath
-	fmt.Printf("executing command")
-	// Run the command and capture the output
-	return cmd.CombinedOutput()
+	if err != nil {
+		out.Err = err.Error()
+	}
+	return out, nil
 }
 
-func readProgram(filePath string) ([]byte, error) {
-	// Open the file
-	file, err := os.Open(filePath + `\main.go`)
+func (es *exampleService) FormatCode(req *http.Request) (interface{}, error) {
+	// Format the source code
+	body, err := io.ReadAll(req.Body)
 	if err != nil {
-		fmt.Printf("Error opening file: %s\n", err)
 		return nil, err
 	}
-	defer file.Close()
+	var bodyStr string
+	json.Unmarshal(body, &bodyStr)
 
-	// Read the file
-	data, err := io.ReadAll(file)
+	defer req.Body.Close()
+
+	formattedSource, err := format.Source([]byte(bodyStr))
 	if err != nil {
-		fmt.Printf("Error reading file: %s\n", err)
-		return nil, err
+		fmt.Println("Error formatting source:", err)
+		return &models.ExampleModel{
+			Err: err.Error(),
+		}, nil
 	}
-
-	return data, nil
+	return &models.ExampleModel{
+		Program: string(formattedSource),
+	}, nil
 }

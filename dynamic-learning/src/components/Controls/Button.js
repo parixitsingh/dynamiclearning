@@ -7,8 +7,10 @@ function Button(props) {
         props.callBack(event)
     }
   };
+
+  let className = 'button-container' + ' ' + props.className
   return (
-    <div className={ 'button-container' } onClick={onClick}>
+    <div className={ className } onClick={onClick}>
         {props.buttonText}
     </div>
   )

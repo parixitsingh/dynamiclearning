@@ -42,10 +42,12 @@ func main() {
 	port := ":8081"
 	log.Printf("Serving files from example service on HTTP port: %s\n", port)
 
-	mux := http.NewServeMux()
-	mux.Handle(router.RegisterRoute("/letstry/*", http.MethodGet, es.GetExample))
+	router := router.NewRouter()
+	router.RegisterRoute("/letstry/go", http.MethodGet, es.GetExample)
+	router.RegisterRoute("/letstry/go", http.MethodPost, es.PostExample)
+	router.RegisterRoute("/letstry/go/format", http.MethodPost, es.FormatCode)
 	// Start the server
-	if err := http.ListenAndServe(port, enableCORS(mux)); err != nil {
+	if err := http.ListenAndServe(port, enableCORS(router)); err != nil {
 		log.Fatalf("Failed to start server: %s\n", err)
 	}
 }
